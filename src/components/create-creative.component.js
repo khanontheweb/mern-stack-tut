@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-
-function CreateTodo() {
+function CreateCreative() {
     const [name, setName] = useState('');
     const [instagram, setInstagram] = useState('');
     const [email, setEmail] = useState('');
@@ -42,6 +42,23 @@ function CreateTodo() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Form submitted", name, instagram, email, facebook, options);
+        const mediums = [];
+        options.forEach((value, key, map) => {
+            if(value[0])
+                mediums.push(key);
+        });
+
+        const newCreative = {
+            "name": name,
+            "instagram": instagram,
+            "email": email,
+            "facebook": facebook,
+            "mediums": mediums
+        }
+
+        axios.post('http://localhost:4000/creatives/add', newCreative)
+        .then(res => console.log(res.data));
+
         setName('');
         setInstagram('');
         setEmail('');
@@ -111,4 +128,4 @@ function CreateTodo() {
     );
 }
 
-export default CreateTodo;
+export default CreateCreative;

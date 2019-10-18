@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EditTodo() {
+function EditCreative() {
 
     return (
         <div>
@@ -9,4 +9,4 @@ function EditTodo() {
     );
 }
 
-export default EditTodo;
+export default EditCreative;

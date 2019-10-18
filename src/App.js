@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";  
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import TodosList from "./components/todos-list.component";
-import CreateTodo from "./components/create-todo.component";
-import EditTodo from "./components/edit-todo.component";
+import CreativesList from "./components/creatives-list.component";
+import CreateCreative from "./components/create-creative.component";
+import EditCreative from "./components/edit-creative.component";
 
 function App() {
   return (
@@ -24,9 +24,9 @@ function App() {
           </div>
         </nav>
         
-        <Route path="/" exact component={TodosList} />
-        <Route path="/edit/:id" component={EditTodo} />
-        <Route path="/create" component={CreateTodo} />
+        <Route path="/" exact component={CreativesList} />
+        <Route path="/edit/:id" component={EditCreative} />
+        <Route path="/create" component={CreateCreative} />
       </div>
     </Router>
   );
